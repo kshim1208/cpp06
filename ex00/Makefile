@@ -1,10 +1,10 @@
-NAME = Towards_a_more_useful_fixed-point_number_class
+NAME = convert
 CPPC = c++
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm
 RMFLAGS = -f
 
-SRCS = main.cpp Fixed.cpp
+SRCS = main.cpp ScalarConverter.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
