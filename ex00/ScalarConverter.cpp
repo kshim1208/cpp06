@@ -46,6 +46,10 @@ const char*	ScalarConverter::ScalarConvertImpossible::what() const throw()
 	return ("impossible");
 }
 
+
+// nan의 형태는 implementation depended라 반드시 아래 구조를 따를 거라고는 볼 수 없지 않을까?
+	// 좀 더 standard에 준하는 방법이 있을까?
+	// 아니면 이론적으로 implementation depended한 구현의 결과가 아래 등식을 만족하도록 형성될 것이란 근거가 있을까?
 bool	ScalarConverter::ft_isnanf(float f)
 {
 	return (f != f);

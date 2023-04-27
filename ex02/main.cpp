@@ -9,16 +9,14 @@
 Base*	generate(void)
 {
 	Base*	tmp;
-	std::random_device	rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<int> dis(0, 2);
+	int		random = std::rand() % 3;
 
-	if (dis(gen) == 0)
+	if (random == 0)
 	{
 		tmp = new A();
 		std::cout << "generate - the masked_instance is A.... " << tmp << " in secret." << std::endl;
 	}
-	else if (dis(gen) == 1)
+	else if (random == 1)
 	{
 		tmp = new B();
 		std::cout << "generate - the masked_instance is B.... " << tmp << " in secret." << std::endl;
