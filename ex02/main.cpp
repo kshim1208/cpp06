@@ -9,6 +9,7 @@
 Base*	generate(void)
 {
 	Base*	tmp;
+	std::srand(static_cast<unsigned int>(std::time(nullptr)));
 	int		random = std::rand() % 3;
 
 	if (random == 0)
