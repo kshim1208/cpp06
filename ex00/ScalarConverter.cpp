@@ -50,6 +50,8 @@ const char*	ScalarConverter::ScalarConvertImpossible::what() const throw()
 // nan의 형태는 implementation depended라 반드시 아래 구조를 따를 거라고는 볼 수 없지 않을까?
 	// 좀 더 standard에 준하는 방법이 있을까?
 	// 아니면 이론적으로 implementation depended한 구현의 결과가 아래 등식을 만족하도록 형성될 것이란 근거가 있을까?
+		// IEEE 754
+	// 관련 논의 https://stackoverflow.com/questions/37766368/why-did-ieee-754-decide-nan-nan-despite-being-illogical
 bool	ScalarConverter::ft_isnanf(float f)
 {
 	return (f != f);
@@ -115,7 +117,7 @@ void	ScalarConverter::convertTypeSpecify(std::string& string)
 		double	tmp_d;
 
 		tmp_d = std::strtod(string.c_str(), &end);
-		if (tmp_d == HUGE_VAL)
+		if (tmp_d == HUGE_VAL && ft_isinf(tmp_d) == false)
 		{
 			ScalarConverter::char_imp = true;
 			ScalarConverter::int_imp = true;
