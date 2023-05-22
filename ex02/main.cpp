@@ -86,4 +86,5 @@ int main()
 	masked_instance = generate();
 	identify(masked_instance);
 	identify(*masked_instance);
+	return (0);
 }

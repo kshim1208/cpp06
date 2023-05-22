@@ -18,5 +18,5 @@ int	main()
 	std::cout << to_hello_ptr << std::endl;
 	std::cout << hello_ptr_raw << std::endl;
 	std::cout << from_raw_ptr << std::endl;
-	return ;
+	return (0);
 }
