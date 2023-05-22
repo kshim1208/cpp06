@@ -4,6 +4,7 @@
 #include <string>
 #include <cstdlib>
 #include <limits>
+#include <climits>
 #include <cmath>
 #include <float.h>
 #include <cerrno>
