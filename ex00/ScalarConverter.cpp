@@ -3,7 +3,8 @@
 
 #include <string>
 #include <cstdlib>
-#include <limits.h>
+#include <limits>
+#include <cmath>
 #include <float.h>
 #include <cerrno>
 
@@ -85,9 +86,9 @@ bool	ScalarConverter::ft_isposinff(float f)
 
 void	ScalarConverter::convertTypeSpecify(std::string& string)
 {
-	if (string.length() == 1 && isprint(string.front()) != 0 && isdigit(string.front()) == 0)
+	if (string.length() == 1 && isprint(*string.begin()) != 0 && isdigit(*string.begin()) == 0)
 	{
-		ScalarConverter::c = string.front();
+		ScalarConverter::c = *string.begin();
 		ScalarConverter::i = static_cast<int>(ScalarConverter::c);
 		ScalarConverter::f = static_cast<float>(ScalarConverter::c);
 		ScalarConverter::d = static_cast<double>(ScalarConverter::c);
